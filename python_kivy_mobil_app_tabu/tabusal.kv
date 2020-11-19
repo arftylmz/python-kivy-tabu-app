@@ -1,0 +1,79 @@
+<giris_ekrani>:
+    canvas.before:
+        Rectangle:
+            source:"anasayfa-blank.png"
+            size:self.size
+    BoxLayout:
+        spacing:40
+        padding:90
+        oriantation: "vertical"
+        size_hint: 1,1
+        Button:
+            text:"Hakkinda"
+            font_name:"font2"
+            font_size: 40
+            size_hint:0.2,0.1
+            pos_hint:{"center_x":0.5,"center_y":0.2}
+            background_normal:"nasil-oynanir-ve-cikis-button.png"
+            on_press: app.show_interstitial()
+            on_release:root.hakkinda()
+        Button:
+            text:"Cikis"
+            font_name:"font2"
+            font_size: 40
+            size_hint:0.2,0.1
+            pos_hint:{"center_x":0.5,"center_y":0.2}
+            background_normal:"nasil-oynanir-ve-cikis-button.png"
+            on_press:root.exit()
+    BoxLayout:
+        padding:90
+        Button:
+            text:"Oyuna Basla"
+            font_name:"font2"
+            font_size: 50
+            size_hint:0.3,0.1
+            size:self.size
+            pos_hint:{"center_x":0.5,"center_y":0.4}
+            background_normal: "start-button.png"
+            on_press: root.manager.current = "oyun"
+            on_press: app.show_interstitial()
+
+<oyun>:
+    BoxLayout:
+        oriantation: "vertical"
+        size_hint: 1,1
+        canvas.before:
+            Rectangle:
+                source: "Oyun-Ekrani.jpg"
+                size: self.size
+        Button:
+            size_hint: 0.4,0.1
+            pos_hint:{"center_x":0,"center_y":0.1}
+            background_normal:"yanlis-button.png"
+            on_press:root.yanlis()
+        Button:
+            size_hint: 0.4,0.1
+            pos_hint:{"center_x":0,"center_y":0.1}
+            background_normal:"pas-button.png"
+            on_press: root.pas()
+        Button:
+            size_hint: 0.4,0.1
+            pos_hint:{"center_x":0,"center_y":0.1}
+            background_normal:"dogru-button.png"
+            on_press: root.dogru()
+    BoxLayout:
+        oriantation: "vertical"
+        size_hint: 1,1
+        spacing: 10
+        padding: 30
+        Button:
+            id:start-stop
+            text:"BASLAT"
+            size:200,90
+            size_hint:None,None
+            font_name: "font2"
+            pos_hint:{"center_x":0.9,"center_y":0.9}
+            background_normal:"start-button.png"
+            on_press: root.popAc()
+            on_press: root.stop()
+            on_press: app.show_interstitial()
