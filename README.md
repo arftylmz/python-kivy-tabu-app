@@ -6,6 +6,6 @@ My first mobil application with Python-Kivy Source Code.
 
 Firstly set up Kivy libraryin Python and run files.
 
-App Store Link:
+Google Play Store Link:
 https://play.google.com/store/apps/details?id=arft.ylmz.tbsl&hl=tr
 
